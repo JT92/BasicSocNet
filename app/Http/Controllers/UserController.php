@@ -18,6 +18,7 @@ class UserController extends Controller
             'password' => 'required|min:5|max:25'
         ]);
 
+        
         // Get the request variables
         $email = $request['email'];
         $name = $request['name'];
