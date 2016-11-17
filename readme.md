@@ -1,3 +1,72 @@
+# Laravel - Basic Social Network Example
+
+This is a basic social network style site built using Laravel 5.3.
+The site allows users to register/login and then create posts which they and other users can like/dislike.
+The user can also change his name in an account settings page as well as upload a picture to the app storage.
+
+## Models
+
+The site uses the following 3 basic model objects:
+
+### User
+
+| Column        | Type           | Relation|
+| ------------- | -------------- | ------- |
+| id            | increments     | primary |
+| email         | string         |         |
+| name          | string         |         |
+| password      | string(hashed) |         |
+
+>The User object stores information about the user. For this example, it only contains the email, name, and password.
+>A user can create and like many posts. He has a **one-to-many** relationship to likes and posts.
+
+### Post
+
+| Column        | Type           | Relation       |
+| ------------- | -------------- | -------------- |
+| id            | increments     | primary        |
+| user_id       | interger       | foreign (user) |
+| content       | string         |                |
+
+>The Post model stores the posts created by users. The post as a **many-to-one** relationship to users and a one-to-many
+>relationship to likes. 
+
+### Like
+
+| Column        | Type           | Relation        |
+| ------------- | -------------- | --------------- |
+| id            | increments     | primary         |
+| user_id       | interger       | foreign (user)  |
+| post_id       | interger       | foreign (post)  |
+| like          | boolean        |                 |
+
+>The Like model is used to store what posts have been liked by what users. It simply stores whether a post
+>has been liked or disliked. If a user removes his like/dislike, the row is deleted.
+>The like object has a **many-to-one** relationship to a user, and a **many-to-one** relationship to a post.
+
+The models were created using Laravel's Eloquent ORM, and they are implemented as MySQL tables.
+
+## Controllers
+The project uses two controllers: a User Controller and a Post Controller
+
+##### User Controller
+>This controls all of the user related functionality. This includes creating a user, loging in/out, 
+>and showing/modifying the accout information.
+
+##### Post Controller
+>This controls all of the post related functionality. This includes the Post CRUD management, the dashboard display, 
+>and liking/disliking posts.
+
+## Front End Design
+The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
+
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
