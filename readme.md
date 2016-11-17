@@ -62,9 +62,13 @@ The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
 
 <br/>
 <br/>
-<br/>
 
 ---
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 # Laravel PHP Framework
 
