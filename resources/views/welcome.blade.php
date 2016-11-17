@@ -9,6 +9,15 @@
     {{-- Error message Section --}}
     @include('includes.form-message-block')
 
+    <section class="row text-center">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Welcome to Basic Soc Net!</h2>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="sub-header"><small>Please Sign In!</small></h2>
+        </div>
+    </section>
+
     <section class="row login-container">
 
         {{-- Registration Section --}}

@@ -1,3 +1,9 @@
+/* headers */
+h2.sub-header {
+    margin-top: 0px;
+}
+
+/* posts */
 .new-post, .row-padded{
     padding: 16px 0;
 }
