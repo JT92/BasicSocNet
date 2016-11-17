@@ -41,6 +41,11 @@ Route::post('/createpost', [
 ]);
 
 Route::get('/delete-post/{post_id}', [
-   'uses' => 'PostController@getDeletePost',
+    'uses' => 'PostController@getDeletePost',
     'as' => 'post.delete'
+]);
+
+Route::post('/edit-post', [
+    'uses' => 'PostController@postEditPost',
+    'as' => 'post.edit'
 ]);

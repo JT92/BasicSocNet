@@ -13,16 +13,16 @@ class UserController extends Controller
     {
         // Validate the data
         $this->validate($request, [
-            'email' => 'required|email|unique:users',
-            'name' => 'required|min:1|max:50',
-            'password' => 'required|min:5|max:25'
+            'registration-email' => 'required|email|unique:users',
+            'registration-name' => 'required|min:1|max:50',
+            'registration-password' => 'required|min:5|max:25'
         ]);
 
-        
+
         // Get the request variables
-        $email = $request['email'];
-        $name = $request['name'];
-        $password = bcrypt($request['password']);
+        $email = $request['registration-email'];
+        $name = $request['registration-name'];
+        $password = bcrypt($request['registration-password']);
 
         // Create the user
         $user = new User();
@@ -41,12 +41,12 @@ class UserController extends Controller
     {
         // Validate the data
         $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required'
+            'login-email' => 'required',
+            'login-password' => 'required'
         ]);
 
         // Login the User
-        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password'] ])){
+        if (Auth::attempt(['email' => $request['login-email'], 'password' => $request['login-password'] ])){
             return redirect()->route('dashboard');
         }
         return redirect()->back();

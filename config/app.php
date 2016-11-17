@@ -167,7 +167,8 @@ return [
          * Package Service Providers...
          */
 
-        //
+        // Laravel IDE Helper
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
         /*
          * Application Service Providers...

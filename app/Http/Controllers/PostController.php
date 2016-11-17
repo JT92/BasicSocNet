@@ -48,4 +48,27 @@ class PostController extends Controller
         return redirect()->route('dashboard')->with(['message' => 'Successfully deleted!']);
     }
 
+    // Edit a Post
+    public function postEditPost(Request $request){
+
+        // validate the request
+        $this->validate($request, [
+            'content' => 'required'
+        ]);
+
+        // Find in database
+        $post = Post::find($request['postId']);
+
+        // Verify that the user editing the post is the user who created it
+        if (Auth::user() != $post->user) {
+            return redirect()->back();
+        }
+
+        // Update post
+        $post->content = $request['content'];
+        $post->update();
+        return response()->json(['message' => 'Successfully edited!'], 200);
+
+    }
+
 }

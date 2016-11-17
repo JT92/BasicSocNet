@@ -33,16 +33,15 @@
         <div class="col-md-6 col-md-offset-3">
             <header><h3>Posts:</h3></header>
             @foreach($posts as $post)
-                <article class="post">
-                    <p>{{ $post->content }}</p>
+                <article class="post" data-postid="{{ $post->id }}">
+                    <p class="post-content">{{ $post->content }}</p>
                     <div class="info">Posted by {{ $post->user->name }} on {{ $post->created_at }}</div>
                     <div class="interaction">
-                        <a href="javascript(void);">Like</a> |
-                        <a href="javascript(void);">Dislike</a>
+                        <a class="inter-post-like" href="javascript:void(0)">Like</a> |
+                        <a class="inter-post-dislike" href="javascript:void(0)">Dislike</a>
                         @if(Auth::user() == $post->user)
-                        |
-                            <a href="javascript(void);">Edit</a> |
-                            <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
+                            | <a  class="inter-post-edit" href="javascript:void(0)">Edit</a>
+                            | <a  class="inter-post-delete" href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
                         @endif
                     </div>
                 </article>
@@ -50,6 +49,34 @@
 
         </div>
     </section>
+
+    {{-- Modal: Edit Post --}}
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-edit-post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Post</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control post-content" name="post-content" rows="3" placeholder="Enter post here..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary modal-save">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <script>
+        var token = '{{ Session::token() }}';
+        var url = '{{ route('post.edit') }}';
+    </script>
 
 @endsection
 
