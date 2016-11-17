@@ -1,3 +1,50 @@
+# Laravel - Basic Social Network Example
+
+This is a basic social network style site built using Laravel 5.3.
+The site allows users to register/login and then create posts which they and other users can like/dislike.
+The user can also change his name in an account settings page as well as upload a picture to the app storage.
+
+## Model
+
+The site uses the following 3 basic model objects:
+
+### User
+
+| Column        | Type           | Key     |
+| ------------- | -------------- | ------- |
+| id            | increments     | primary |
+| email         | string         |         |
+| name          | string         |         |
+| password      | string(hashed) |         |
+
+###### The User object stores information about the user. For this example, it only contains the email, name, and password.
+###### A user can create and like many posts. He has a **one-to-many relationship to likes and posts.
+
+### Post
+
+| Column        | Type           | Key     |
+| ------------- | -------------- | ------- |
+| id            | increments     | primary |
+| user_id       | interger       | foreign |
+| content       | string         |         |
+
+###### The Post model stores the posts created by users. The post as a **many-to-one relationship to users and a one-to-many
+###### relationship to likes. 
+
+### Like
+
+| Column        | Type           | Key     |
+| ------------- | -------------- | ------- |
+| id            | increments     | primary |
+| like          | boolean        |         |
+| user_id       | interger       | foreign |
+| post_id       | interger       | foreign |
+
+###### The Like model is used to store what posts have been liked by what users. 
+###### The like object has a **many-to-one relationship to a user, and a **many-to-one relationship to a post.
+
+---
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
