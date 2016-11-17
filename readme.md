@@ -49,12 +49,12 @@ The models were created using Laravel's Eloquent ORM, and they are implemented a
 The project uses two controllers: a User Controller and a Post Controller
 
 #### User Controller
-⋅⋅⋅This controls all of the user related functionality. This includes creating a user, loging in/out, 
-and showing/modifying the accout information.⋅⋅
+&nbsp;&nbsp;&nbsp;This controls all of the user related functionality. This includes creating a user, loging in/out, 
+&nbsp;&nbsp;&nbsp;and showing/modifying the accout information.
 
 #### Post Controller
-⋅⋅⋅This controls all of the post related functionality. This includes the Post CRUD management, the dashboard display, 
-and liking/disliking posts.⋅⋅
+&nbsp;&nbsp;&nbsp;This controls all of the post related functionality. This includes the Post CRUD management, the dashboard display, 
+&nbsp;&nbsp;&nbsp;and liking/disliking posts.
 
 ## Front End Design
 The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
