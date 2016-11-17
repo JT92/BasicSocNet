@@ -60,6 +60,18 @@ The project uses two controllers: a User Controller and a Post Controller
 ## Front End Design
 The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
 
+## Screenshots
+
+![login error](https://cloud.githubusercontent.com/assets/21697420/20399664/df1938ac-acbf-11e6-98af-103ec0bf467f.png)
+>This screenshot shows the validation system in action. The page uses PHP Validation in combination with bootstrap
+>validation to provide the user with feedback regarding expected input. All input is protected against CSRF attacks.
+
+
+
+
+
+
+
 ---
 
 <br/>
