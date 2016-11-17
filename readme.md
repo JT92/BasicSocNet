@@ -66,7 +66,10 @@ The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
 >This screenshot shows the validation system in action. The page uses PHP Validation in combination with bootstrap
 >validation to provide the user with feedback regarding expected input. All input is protected against CSRF attacks.
 
-
+<br/>
+![dashboard2](https://cloud.githubusercontent.com/assets/21697420/20400145/985d8862-acc1-11e6-9a9c-8f76c58ebb0c.PNG)
+>This screenshot shows the dashboard page with a few comments added in. You can like or dislike any posts, and you
+>can edit or delete any posts that you created.
 
 
 
