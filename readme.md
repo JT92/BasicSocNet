@@ -22,23 +22,23 @@ The site uses the following 3 basic model objects:
 
 ### Post
 
-| Column        | Type           | Relation|
-| ------------- | -------------- | ------- |
-| id            | increments     | primary |
-| user_id       | interger       | foreign |
-| content       | string         |         |
+| Column        | Type           | Relation       |
+| ------------- | -------------- | -------------= |
+| id            | increments     | primary        |
+| user_id       | interger       | belongsTo(User)|
+| content       | string         |                |
 
 >The Post model stores the posts created by users. The post as a **many-to-one** relationship to users and a one-to-many
 >relationship to likes. 
 
 ### Like
 
-| Column        | Type           | Relation|
-| ------------- | -------------- | ------- |
-| id            | increments     | primary |
-| like          | boolean        |         |
-| user_id       | interger       | foreign |
-| post_id       | interger       | foreign |
+| Column        | Type           | Relation        |
+| ------------- | -------------- | --------------- |
+| id            | increments     | primary         |
+| like          | boolean        |                 |
+| user_id       | interger       | belongsTo(User) |
+| post_id       | interger       | belongsTo(Post) |
 
 >The Like model is used to store what posts have been liked by what users. 
 >The like object has a **many-to-one** relationship to a user, and a **many-to-one** relationship to a post.
