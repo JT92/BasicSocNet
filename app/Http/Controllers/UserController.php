@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         // Validate the data
         $this->validate($request, [
-            'registration-email' => 'required|email|unique:users',
+            'registration-email' => 'required|email|unique:users,email',
             'registration-name' => 'required|min:1|max:50',
             'registration-password' => 'required|min:5|max:25'
         ]);

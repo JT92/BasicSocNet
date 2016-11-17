@@ -39,7 +39,7 @@ Route::get('/logout', [
 Route::get('/account', [
     'uses' => 'UserController@getShowAccount',
     'as' => 'account.edit'
-]);
+])->middleware('auth');;
 
 Route::post('/editaccount', [
     'uses' => 'UserController@postEditAccount',

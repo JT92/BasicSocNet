@@ -11,7 +11,7 @@
 
     {{-- Heading --}}
     <section class="row">
-        <header class="col-md-6 col-md-offset-3"><h1>My Dashboard</h1></header>
+        <header class="col-md-6 col-md-offset-3"><h1>Dashboard</h1></header>
     </section>
 
     {{-- New Post Section --}}
