@@ -4,7 +4,7 @@ This is a basic social network style site built using Laravel 5.3.
 The site allows users to register/login and then create posts which they and other users can like/dislike.
 The user can also change his name in an account settings page as well as upload a picture to the app storage.
 
-## Model
+## Models
 
 The site uses the following 3 basic model objects:
 
@@ -42,6 +42,27 @@ The site uses the following 3 basic model objects:
 
 ###### The Like model is used to store what posts have been liked by what users. 
 ###### The like object has a **many-to-one relationship to a user, and a **many-to-one relationship to a post.
+
+The models were created using Laravel's Eloquent ORM, and they are implemented as MySQL tables.
+
+## Controllers
+The project uses two controllers: a User Controller and a Post Controller
+
+#### User Controller
+⋅⋅⋅This controls all of the user related functionality. This includes creating a user, loging in/out, 
+and showing/modifying the accout information.⋅⋅
+
+#### Post Controller
+⋅⋅⋅This controls all of the post related functionality. This includes the Post CRUD management, the dashboard display, 
+and liking/disliking posts.⋅⋅
+
+## Front End Design
+The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
+
+
+
+
+
 
 ---
 
