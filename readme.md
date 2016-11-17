@@ -18,7 +18,7 @@ The site uses the following 3 basic model objects:
 | password      | string(hashed) |         |
 
 >The User object stores information about the user. For this example, it only contains the email, name, and password.
->A user can create and like many posts. He has a **one-to-many relationship to likes and posts.
+>A user can create and like many posts. He has a **one-to-many** relationship to likes and posts.
 
 ### Post
 
@@ -28,7 +28,7 @@ The site uses the following 3 basic model objects:
 | user_id       | interger       | foreign |
 | content       | string         |         |
 
->The Post model stores the posts created by users. The post as a **many-to-one relationship to users and a one-to-many
+>The Post model stores the posts created by users. The post as a **many-to-one** relationship to users and a one-to-many
 >relationship to likes. 
 
 ### Like
@@ -41,7 +41,7 @@ The site uses the following 3 basic model objects:
 | post_id       | interger       | foreign |
 
 >The Like model is used to store what posts have been liked by what users. 
->The like object has a **many-to-one relationship to a user, and a **many-to-one relationship to a post.
+>The like object has a **many-to-one** relationship to a user, and a **many-to-one** relationship to a post.
 
 The models were created using Laravel's Eloquent ORM, and they are implemented as MySQL tables.
 
