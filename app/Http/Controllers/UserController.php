@@ -85,7 +85,6 @@ class UserController extends Controller
             Storage::disk('local')->put($filename, File::get($image));
         }
         return redirect()->route('account.edit');
-
     }
 
     // Gets the user's profile image

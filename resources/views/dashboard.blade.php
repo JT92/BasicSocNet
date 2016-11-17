@@ -37,8 +37,8 @@
                     <p class="post-content">{{ $post->content }}</p>
                     <div class="info">Posted by {{ $post->user->name }} on {{ $post->created_at }}</div>
                     <div class="interaction">
-                        <a class="inter-post-like" href="javascript:void(0)">Like</a> |
-                        <a class="inter-post-dislike" href="javascript:void(0)">Dislike</a>
+                        <a class="inter-post-like" href="javascript:void(0)">{{ $post->like_a }}</a> |
+                        <a class="inter-post-dislike" href="javascript:void(0)">{{ $post->dislike_a }}</a>
                         @if(Auth::user() == $post->user)
                             | <a  class="inter-post-edit" href="javascript:void(0)">Edit</a>
                             | <a  class="inter-post-delete" href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
@@ -75,7 +75,8 @@
 
     <script>
         var token = '{{ Session::token() }}';
-        var url = '{{ route('post.edit') }}';
+        var likeUrl = '{{ route('post.like') }}'
+        var editUrl = '{{ route('post.edit') }}';
     </script>
 
 @endsection

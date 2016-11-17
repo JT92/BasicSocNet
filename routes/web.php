@@ -67,6 +67,11 @@ Route::post('/createpost', [
     'as' => 'post.create'
 ]);
 
+Route::post('/like', [
+    'uses' => 'PostController@postLikePost',
+    'as' => 'post.like'
+]);
+
 Route::get('/delete-post/{post_id}', [
     'uses' => 'PostController@getDeletePost',
     'as' => 'post.delete'
@@ -76,3 +81,4 @@ Route::post('/edit-post', [
     'uses' => 'PostController@postEditPost',
     'as' => 'post.edit'
 ]);
+

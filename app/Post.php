@@ -13,4 +13,13 @@ class Post extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    // Establish relationship to 'Likes'
+    // One user can have many likes
+    // user_id will be store in each like
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
+
 }
