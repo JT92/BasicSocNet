@@ -23,9 +23,9 @@ The site uses the following 3 basic model objects:
 ### Post
 
 | Column        | Type           | Relation       |
-| ------------- | -------------- | -------------= |
+| ------------- | -------------- | -------------- |
 | id            | increments     | primary        |
-| user_id       | interger       | belongsTo(User)|
+| user_id       | interger       | foreign (user) |
 | content       | string         |                |
 
 >The Post model stores the posts created by users. The post as a **many-to-one** relationship to users and a one-to-many
@@ -37,8 +37,8 @@ The site uses the following 3 basic model objects:
 | ------------- | -------------- | --------------- |
 | id            | increments     | primary         |
 | like          | boolean        |                 |
-| user_id       | interger       | belongsTo(User) |
-| post_id       | interger       | belongsTo(Post) |
+| user_id       | interger       | foreign (user)  |
+| post_id       | interger       | foreign (post)  |
 
 >The Like model is used to store what posts have been liked by what users. 
 >The like object has a **many-to-one** relationship to a user, and a **many-to-one** relationship to a post.
