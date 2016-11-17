@@ -3,7 +3,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -58,4 +61,38 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('home');
     }
+
+    // Show Edit Account Page
+    public function getShowAccount()
+    {
+        return view('account', ['user' => Auth::user()]);
+    }
+
+    // Save the edits on the account
+    public function postEditAccount(Request $request)
+    {
+        $this->validate($request, [
+           'name' => 'required|max:50'
+        ]);
+
+        $user = Auth::user();
+        $user->name = $request['name'];
+        $user->update();
+
+        $image = $request->file('profile-image');
+        $filename = $user->id . '_profile_img.jpg';
+        if ($image) {
+            Storage::disk('local')->put($filename, File::get($image));
+        }
+        return redirect()->route('account.edit');
+
+    }
+
+    // Gets the user's profile image
+    public function getUserImage($filename)
+    {
+        $image = Storage::disk('local')->get($filename);
+        return new Response($image, 200);
+    }
+
 }

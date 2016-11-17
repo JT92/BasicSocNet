@@ -47,7 +47,7 @@
         {{-- Log in Section --}}
         <div class="col-md-6">
             <h3>Log In</h3>
-            <form action="{{ route('login') }}" method="post">
+            <form action="{{ route('account.login') }}" method="post">
                 <div class="form-group has-feedback {{ $errors->has('login-email') ? 'has-error' : '' }} ">
                     <label for="email">Your E-Mail</label>
                     <input class="form-control" type="text" name="login-email" id="email" value="{{ Request::old('login-email')  }}">
