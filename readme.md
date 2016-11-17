@@ -10,7 +10,7 @@ The site uses the following 3 basic model objects:
 
 ### User
 
-| Column        | Type           | Key     |
+| Column        | Type           | Relation|
 | ------------- | -------------- | ------- |
 | id            | increments     | primary |
 | email         | string         |         |
@@ -22,7 +22,7 @@ The site uses the following 3 basic model objects:
 
 ### Post
 
-| Column        | Type           | Key     |
+| Column        | Type           | Relation|
 | ------------- | -------------- | ------- |
 | id            | increments     | primary |
 | user_id       | interger       | foreign |
@@ -33,7 +33,7 @@ The site uses the following 3 basic model objects:
 
 ### Like
 
-| Column        | Type           | Key     |
+| Column        | Type           | Relation|
 | ------------- | -------------- | ------- |
 | id            | increments     | primary |
 | like          | boolean        |         |
