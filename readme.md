@@ -40,7 +40,8 @@ The site uses the following 3 basic model objects:
 | post_id       | interger       | foreign (post)  |
 | like          | boolean        |                 |
 
->The Like model is used to store what posts have been liked by what users. 
+>The Like model is used to store what posts have been liked by what users. It simply stores whether a post
+>has been liked or disliked. If a user removes his like/dislike, the row is deleted.
 >The like object has a **many-to-one** relationship to a user, and a **many-to-one** relationship to a post.
 
 The models were created using Laravel's Eloquent ORM, and they are implemented as MySQL tables.
