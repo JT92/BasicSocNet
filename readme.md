@@ -10,15 +10,15 @@ The site uses the following 3 basic model objects:
 
 ### User
 
->The User object stores information about the user. For this example, it only contains the email, name, and password.
->A user can create and like many posts. He has a **one-to-many** relationship to likes and posts.
-
 | Column        | Type           | Key     |
 | ------------- | -------------- | ------- |
 | id            | increments     | primary |
 | email         | string         |         |
 | name          | string         |         |
 | password      | string(hashed) |         |
+
+>The User object stores information about the user. For this example, it only contains the email, name, and password.
+>A user can create and like many posts. He has a **one-to-many** relationship to likes and posts.
 
 ### Post
 
