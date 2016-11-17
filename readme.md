@@ -60,10 +60,6 @@ The project uses two controllers: a User Controller and a Post Controller
 ## Front End Design
 The front end was created using JavaScript, JQuery, AJAX, CSS, and Bootsrap.
 
-
-<br/>
-<br/>
-
 ---
 
 <br/>
